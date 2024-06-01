@@ -30,17 +30,19 @@ The multithreaded web server utilizes a thread pool to manage incoming requests.
 
 Start the server with the following command:
 
-./server \<port\> \<thread_pool_size\>
+> ./server \<port\> \<thread_pool_size\> \<buffer_size\> \<schedule_policy\>   
 
 For example:
 
-This will start the server on port 8080 with a pool of 4 worker threads.
+> ./server 8080 4 16 FIFO
+
+This will start the server on port 8080 with a pool of 4 worker threads and a buffer of size 16.
 
 A client program is provided to test the server. The client sends multiple HTTP GET requests to the server in parallel using pthreads.
 
 Example command to run the client:
 
-./client localhost 8080 file 15
+> ./client localhost 8080 file 15
 
 This command connects to the server on `localhost` at port `8080` and requests 15 files named `file1.txt`, `file2.txt`, ..., `file15.txt`.
 
