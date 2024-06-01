@@ -1,0 +1,5 @@
+These files are used for testing with client.
+
+EXAMPLE USAGE:
+
+./client localhost <port> /files/file <file_count>
